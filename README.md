@@ -62,6 +62,8 @@
 1. Determine how much space is available on the current hardware's disk(s).
 	- `df -h`
 2. Identify, partition, and format out the new disk as xfs filesystem.
+	- `fdisk -l` to identity attached disks
+	- 
 3. mount the disk under a new mount /scratch
 	- create directory `/scratch`, then run `mount -t xfs /dev/sdx1 /scratch`
 	- make changes to `/etc/fstab` to mount at boot
