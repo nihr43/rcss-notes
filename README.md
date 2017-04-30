@@ -1,9 +1,9 @@
-##Sample Interview Questions
+## Sample Interview Questions
 
 
 
 
-###Basic Linux
+### Basic Linux
 1. Who is logged into the system?
 2. How much disk space is available and how much of your quota have you used?
 3. Describe the difference between a primary group and group membership.
@@ -12,7 +12,7 @@
 
 
 
-###Using a cluster
+### Using a cluster
 1. Create a SLURM jobfile and submit a test job to the cluster. Demonstrate the use of a Job Array.
 2. Use the SLURM accounting to determine the resources consumed by a job.
 3. Describe the difference between, and merits of, interactive and batch jobs.
@@ -23,7 +23,7 @@
 
 
 
-###Code Development Management
+### Code Development Management
 1. Create a git repository and push it to github or other location.
 2. Create a branch and make some changes, show the difference.
 3. Describe and demonstrate Test Driven Development (TDD)
@@ -32,7 +32,7 @@
 
 
 
-###Scientific Computation
+### Scientific Computation
 1. Using scientific software (Julia and R) in interactive mode.
 2. Provide a simple test code and execute as a job on the cluster (Julia, R, Python, etc.)
 3. Demonstrate the use of parallelization.
@@ -41,7 +41,7 @@
 
 
 
-###Data Management
+### Data Management
 1. Create a simple SQLite3 database from a CSV file and perform a simple query. Use of C and scripting libraries acceptable but not direct examples.
 2. What happens when you dump 10,000 files in a folder? How can you mitigate this problem.
 3. Utilize an external service that has a REST API (S3, iPlant etc.).
@@ -49,7 +49,7 @@
 
 
 
-###Access and Account Management
+### Access and Account Management
 1. Create a group named rcss.
 2. Create a user and add that user to the group rcss.
 3. Query the ldap server for a specific user.
@@ -57,7 +57,7 @@
 
 
 
-###Storage Management
+### Storage Management
 1. Determine how much space is available on the current hardware's disk(s).
 2. Identify, partition, and format out the new disk as xfs filesystem.
 3. mount the disk under a new mount /scratch
@@ -68,7 +68,7 @@
 
 
 
-###Network and Services
+### Network and Services
 1. What is your IP?
 2. What is your Gateway?
 3. What are your DNS servers?
