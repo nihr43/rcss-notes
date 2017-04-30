@@ -71,7 +71,7 @@
 
 ### Network and Services
 1. What is your IP?
-	- `ip addr' for all interfaces and their addresses
+	- `ip addr` for all interfaces and their addresses
 2. What is your Gateway?
 	- if packgage 'net-tools' is installed, `netstat-nr` shows known routes.  Address associated with '0.0.0.0' is the default route.
 3. What are your DNS servers?
