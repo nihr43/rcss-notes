@@ -5,7 +5,7 @@
 
 ### Basic Linux
 1. Who is logged into the system?
-	- Can be found using `users`
+	- found using `users`
 2. How much disk space is available and how much of your quota have you used?
 3. Describe the difference between a primary group and group membership.
 4. Create a "lab" folder where users can share data and use the proper (Posix ACL, NSFv4 ACL/sticky bits).
@@ -60,10 +60,16 @@
 
 ### Storage Management
 1. Determine how much space is available on the current hardware's disk(s).
+	- `df -h`
 2. Identify, partition, and format out the new disk as xfs filesystem.
 3. mount the disk under a new mount /scratch
+	- create directory `/scratch`, then run `mount -t xfs /dev/sdx1 /scratch`
+	- make changes to `/etc/fstab` to mount at boot
 4. make the mount accessible to the cluster.
+	- edit `/etc/exports` to share via nfs
+	- on nodes, mount and edit `/etc/fstab` with filesystem type `nfsv4`.  The addresses of, or a wildcard for the subnet where the nodes reside, needs to be specified in the nfs server's exports.
 5. reboot the cluster and validate /scratch is present on all nodes.
+	- the new mountpoints should be seen using `df`
 6. Grow an LVM partition on a live system.
 
 
@@ -73,7 +79,7 @@
 1. What is your IP?
 	- `ip addr` for all interfaces and their addresses
 2. What is your Gateway?
-	- if packgage 'net-tools' is installed, `netstat-nr` shows known routes.  Address associated with '0.0.0.0' is the default route.
+	- if package `net-tools` is installed, `netstat-nr` shows known routes.  Address associated with '0.0.0.0' is the default route.
 3. What are your DNS servers?
 	- `cat /etc/resolv.conf`
 4. Provide the IP address for rhn.missouri.edu
