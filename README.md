@@ -5,6 +5,7 @@
 
 ### Basic Linux
 1. Who is logged into the system?
+	- Can be found using `users`
 2. How much disk space is available and how much of your quota have you used?
 3. Describe the difference between a primary group and group membership.
 4. Create a "lab" folder where users can share data and use the proper (Posix ACL, NSFv4 ACL/sticky bits).
@@ -70,12 +71,19 @@
 
 ### Network and Services
 1. What is your IP?
+	- `ip addr' for all interfaces and their addresses
 2. What is your Gateway?
+	- if packgage 'net-tools' is installed, `netstat-nr` shows known routes.  Address associated with '0.0.0.0' is the default route.
 3. What are your DNS servers?
+	- `cat /etc/resolv.conf`
 4. Provide the IP address for rhn.missouri.edu
+	- 128.206.14.43
+	- can be found using `ping`, or `dig` if package `bind-utils` is available
 5. Install a webserver.
+	- `yum install httpd` for apache
 6. Set httpd to start at boot.
 7. What ports are listening?
+	- `nmap -sT localhost` for listening tcp ports on localhost
 8. What is the state of the local firewall?
 9. Add httpd services to the firewall.
 10. Give the compute node access to the Internet (NAT))
