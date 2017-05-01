@@ -102,6 +102,10 @@
 5. Install a webserver.
 	- `yum install httpd` for apache
 6. Set httpd to start at boot.
+	- command to manage services is `systemctl`
+	- `systemctl status httpd` to view status of apache
+	- `systemctl enable httpd` to start at boot
+	- `systemctl start httpd` to start without rebooting
 7. What ports are listening?
 	- `nmap -sT localhost` for listening tcp ports on localhost
 8. What is the state of the local firewall?
