@@ -6,7 +6,10 @@
 ### Basic Linux
 1. Who is logged into the system?
 	- found using `users`
+	- `cat /etc/passwd` to view all users
 2. How much disk space is available and how much of your quota have you used?
+	- `df` to show mountpoints and available space, `du` to show file sizes in directory
+	- quotas-
 3. Describe the difference between a primary group and group membership.
 4. Create a "lab" folder where users can share data and use the proper (Posix ACL, NSFv4 ACL/sticky bits).
 
@@ -26,6 +29,11 @@
 
 ### Code Development Management
 1. Create a git repository and push it to github or other location.
+	- `git init` to create new repo
+	- `git add` files to be tracked
+	- `git commit -a` commit changes to repo
+	- `git remote add origin 'address'` save remote location to be pushed to with name origin
+	- `git push` push repo to remote
 2. Create a branch and make some changes, show the difference.
 3. Describe and demonstrate Test Driven Development (TDD)
 4. Demonstrate the use of a class (in any language)
@@ -45,6 +53,7 @@
 ### Data Management
 1. Create a simple SQLite3 database from a CSV file and perform a simple query. Use of C and scripting libraries acceptable but not direct examples.
 2. What happens when you dump 10,000 files in a folder? How can you mitigate this problem.
+	- Depending on the filesystem, 10,000 files in a single directory may be too many.  Problems of this nature could be mitigated by piping stdout into a tool like tar.
 3. Utilize an external service that has a REST API (S3, iPlant etc.).
 
 
@@ -52,7 +61,10 @@
 
 ### Access and Account Management
 1. Create a group named rcss.
+	- `groupadd rcss`
 2. Create a user and add that user to the group rcss.
+	- `adduser user`
+	- `usermod -aG rcss user`
 3. Query the ldap server for a specific user.
 
 
