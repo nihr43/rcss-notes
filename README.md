@@ -42,6 +42,7 @@
 	- `git commit -a` commit changes to repo
 	- `git remote add origin 'address'` save remote location to be pushed to with name origin
 	- `git push` push repo to remote
+	- `git checkout` to move to a different branch
 2. Create a branch and make some changes, show the difference.
 3. Describe and demonstrate Test Driven Development (TDD)
 4. Demonstrate the use of a class (in any language)
@@ -115,8 +116,20 @@
 	- `systemctl status httpd` to view status of apache
 	- `systemctl enable httpd` to start at boot
 	- `systemctl start httpd` to start without rebooting
+	- `/etc/httpd/conf/httpd.conf` may need to be edited to point the server at a directory
 7. What ports are listening?
 	- `nmap -sT localhost` for listening tcp ports on localhost
 8. What is the state of the local firewall?
+	- `iptables -S` to view active rules
 9. Add httpd services to the firewall.
+	- `notice` centos 7 uses firewalld by default.  [here is a good introduction](https://www.linode.com/docs/security/firewalls/introduction-to-firewalld-on-centos).  firewalld manipulates iptables rules for you.
+	- to open port 80 with firewalld; `firewall-cmd --add-service=http --permanent`
+	- to open port 443 with firewalld; `firewall-cmd --add-service=https --permanent`
+	- to enable a rule without having to restart firewalld, omit `--permanent`
+	- `systemctl restart firewalld` or `firewall-cmd --reload`
 10. Give the compute node access to the Internet (NAT))
+	- first, the machine to act as the router for the compute nodes needs to have ip forwarding enabled
+	- `echo "net.ipv4.ip_forward=1 >> /etc/stsctl.conf"`	apply change with `sysctl -p`
+	- second, the compute nodes will need to have this machine set as their default gateway.  See seperate note 'centos networking'
+	- on the gateway, the external nic needs to be in the public zone, masquerading needs to be enabled on the pulic zone, and the internal nic needs to be assigned on the internal zone.
+	- `firewall-cmd` is used to get-zones, change-zones, and add-masqeurade
