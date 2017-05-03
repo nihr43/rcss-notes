@@ -16,7 +16,7 @@
 	- your groups can be found with command `groups $user`
 4. Create a "lab" folder where users can share data and use the proper (Posix ACL, NSFv4 ACL/sticky bits).
 	- To create a folder where a group may share files, several issues need solved:
-	..* running `chmod -r x7x` on a directory isn't enough, because newly created files will belong to users and their primary groups.
+	- running `chmod x7x` on a directory isn't enough, because newly created files will belong to users and their primary groups.
 	- users need to be added to a common secondary group
 	- the directory needs the group id bit set; `chmod g+s /dir/`
 	- then the directory needs to be owned by a group; `chown .rcss /dir/`
