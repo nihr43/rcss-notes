@@ -1,5 +1,7 @@
 ## LVM
 
+LVM abstracts disks from the filesystem, providing features such as live volume resizing
+
 ### Components
 	- Physical Volumes
 	- Logical Volumes
@@ -7,7 +9,7 @@
 
 ### Semantics
 	- PGs are disks and belong to VGs
-	- VGs span volumes
+	- VGs are groups of physical volumes
 	- LGs present volumes to the filesystem
 
 ### Formatting
