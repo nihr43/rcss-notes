@@ -11,8 +11,16 @@
 	- `df` to show mountpoints and available space, `du` to show file sizes in directory
 	- quotas-
 3. Describe the difference between a primary group and group membership.
+	- A primary group is a user's default group, as set at `adduser`.
+	- A secondary group is a group that a user may start processes as, share files with, etc.
+	- your groups can be found with command `groups $user`
 4. Create a "lab" folder where users can share data and use the proper (Posix ACL, NSFv4 ACL/sticky bits).
-
+	- To create a folder where a group may share files, several issues need solved:
+	..* running `chmod -r x7x` on a directory isn't enough, because newly created files will belong to users and their primary groups.
+	- users need to be added to a common secondary group
+	- the directory needs the group id bit set; `chmod g+s /dir/`
+	- then the directory needs to be owned by a group; `chown .rcss /dir/`
+	- then the directory needs to be made rw for the group, owner, etc; `chmod 77x`
 
 
 
@@ -53,7 +61,7 @@
 ### Data Management
 1. Create a simple SQLite3 database from a CSV file and perform a simple query. Use of C and scripting libraries acceptable but not direct examples.
 2. What happens when you dump 10,000 files in a folder? How can you mitigate this problem.
-	- Depending on the filesystem, 10,000 files in a single directory may be too many.  Problems of this nature could be mitigated by piping stdout into a tool like tar.
+	- Depending on the filesystem, 10,000 files in a single directory may be too many.  Problems of this nature could be mitigated by piping into a tool like tar or gzip
 3. Utilize an external service that has a REST API (S3, iPlant etc.).
 
 
@@ -66,7 +74,7 @@
 	- `adduser user`
 	- `usermod -aG rcss user`
 3. Query the ldap server for a specific user.
-
+	- see serperate ldap notes
 
 
 
@@ -75,7 +83,8 @@
 	- `df -h`
 2. Identify, partition, and format out the new disk as xfs filesystem.
 	- `fdisk -l` to identity attached disks
-	- 
+	- `fdisk` to format disks
+	- `parted` to change disk label types - MBR, GPT 
 3. mount the disk under a new mount /scratch
 	- create directory `/scratch`, then run `mount -t xfs /dev/sdx1 /scratch`
 	- make changes to `/etc/fstab` to mount at boot
@@ -85,7 +94,7 @@
 5. reboot the cluster and validate /scratch is present on all nodes.
 	- the new mountpoints should be seen using `df`
 6. Grow an LVM partition on a live system.
-
+	- see seperate LVM notes
 
 
 
