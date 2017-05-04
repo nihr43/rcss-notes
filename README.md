@@ -78,7 +78,7 @@
 2. What happens when you dump 10,000 files in a folder? How can you mitigate this problem.
 	- Depending on the filesystem, 10,000 files in a single directory may be too many.  Problems of this nature could be mitigated by piping into a tool like tar or gzip
 3. Utilize an external service that has a REST API (S3, iPlant etc.).
-
+	- see rest.sh
 
 
 
