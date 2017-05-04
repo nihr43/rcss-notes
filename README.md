@@ -26,12 +26,22 @@
 
 ### Using a cluster
 1. Create a SLURM jobfile and submit a test job to the cluster. Demonstrate the use of a Job Array.
+	- see seperate sbatch.example
 2. Use the SLURM accounting to determine the resources consumed by a job.
+	- slurm accounting `sacct` displays job information
+	- for example, `sacct -a` shows jobs from all users
+	- `sacct -j12345` shows information for job id 12345
+	- argument `-o` can be used to show specific metrics
 3. Describe the difference between, and merits of, interactive and batch jobs.
+	- interactive jobs using `srun` run in the foreground of a user's shell.  Therefore, this is not a good way of running large jobs.
+	- in order for sstat to work for batch jobs, they must use srun within the job file.
 4. When would using local scratch be optimal?
+	- Local scratch space would be much faster than an nfs mount, and therefore would be a good working directory for a job while running, when ram space won't suffice.
 5. Tell us some metrics about how the cluster is used.
-
-
+	- `sinfo` shows status of all collections of nodes
+	- `squeue` shows batch jobs in queue
+	- `sacct` shows metrics of past jobs
+	- `sstat` shows metrics of currently running jobs;  needs job id
 
 
 
@@ -41,7 +51,7 @@
 	- `git add` files to be tracked
 	- `git commit -a` commit changes to repo
 	- `git remote add origin 'address'` save remote location to be pushed to with name origin
-	- `git push` push repo to remote
+	- `git push` push repo to remote repository
 	- `git checkout` to move to a different branch
 2. Create a branch and make some changes, show the difference.
 3. Describe and demonstrate Test Driven Development (TDD)
