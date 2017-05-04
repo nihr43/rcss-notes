@@ -67,6 +67,7 @@
 1. Using scientific software (Julia and R) in interactive mode.
 2. Provide a simple test code and execute as a job on the cluster (Julia, R, Python, etc.)
 3. Demonstrate the use of parallelization.
+	- see factors.c
 4. Conduct a simple experimental analyses to demonstrate workflow management.
 
 
