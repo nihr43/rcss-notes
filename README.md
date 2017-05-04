@@ -54,9 +54,12 @@
 	- `git push` push repo to remote repository
 	- `git checkout` to move to a different branch
 2. Create a branch and make some changes, show the difference.
+	- create a new branch with `git checkout -b new_branch`
+	- get branch differences with `git diff master..new_branch`
 3. Describe and demonstrate Test Driven Development (TDD)
+	- TDD is the technique of writing a test for a functionality of a program before quite implementing it.  A goal of this approach is that it forces a developer to think through requirements before implementation.
 4. Demonstrate the use of a class (in any language)
-
+	- see hello_world.py
 
 
 
