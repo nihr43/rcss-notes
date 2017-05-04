@@ -1,6 +1,6 @@
-###LDAP
+### LDAP
 
-LDAP is a protocol for accessing a database running on and LDAP server.  The database is a hierarchy of directories.
+LDAP is the protocol for accessing a database running on an LDAP server.  The database is a hierarchy of directories.
 
 Objects are adressed from right to left with the following attributes
 
