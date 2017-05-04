@@ -22,3 +22,6 @@ LVM abstracts disks from the filesystem, providing features such as live volume 
 	- `vgs` list volume groups
 	- `lvdisplay` show volume information
 	- `vgextend` add additional physical volumes to an existing volume group
+	- `lvextend -L +1g vg/lv` add 1g to the logical volume lv in the volume group vg
+	- finally, the filesystem will need to be expanded.  for ext3/4; `resize2fs /dev/vg/lv`
+	- to resize xfs; `xfs_growfs /mountpoint` to grow to maximum allowed

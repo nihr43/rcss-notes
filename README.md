@@ -9,7 +9,7 @@
 	- `cat /etc/passwd` to view all users
 2. How much disk space is available and how much of your quota have you used?
 	- `df` to show mountpoints and available space, `du` to show file sizes in directory
-	- quotas-
+	- `xfs_quota -cx 'report -h' /home` to view a quota on xfs
 3. Describe the difference between a primary group and group membership.
 	- A primary group is a user's default group, as set at `adduser`.
 	- A secondary group is a group that a user may start processes as, share files with, etc.
@@ -129,7 +129,7 @@
 	- `systemctl restart firewalld` or `firewall-cmd --reload`
 10. Give the compute node access to the Internet (NAT))
 	- first, the machine to act as the router for the compute nodes needs to have ip forwarding enabled
-	- `echo "net.ipv4.ip_forward=1 >> /etc/stsctl.conf"`	apply change with `sysctl -p`
+	- `echo "net.ipv4.ip_forward=1" >> /etc/stsctl.conf`	apply change with `sysctl -p`
 	- second, the compute nodes will need to have this machine set as their default gateway.  See seperate note 'centos networking'
 	- on the gateway, the external nic needs to be in the public zone, masquerading needs to be enabled on the pulic zone, and the internal nic needs to be assigned on the internal zone.
 	- `firewall-cmd` is used to get-zones, change-zones, and add-masqeurade
