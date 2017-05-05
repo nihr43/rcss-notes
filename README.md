@@ -33,7 +33,7 @@
 	- `sacct -j12345` shows information for job id 12345
 	- argument `-o` can be used to show specific metrics
 3. Describe the difference between, and merits of, interactive and batch jobs.
-	- interactive jobs using `srun` run in the foreground of a user's shell.  Therefore, this is not a good way of running large jobs.
+	- interactive jobs using `srun` run in the foreground of a user's shell.  Therefore, sbatch is a better way of running large jobs.
 	- in order for sstat to work for batch jobs, they must use srun within the job file.
 4. When would using local scratch be optimal?
 	- Local scratch space would be much faster than an nfs mount, and therefore would be a good working directory for a job while running, when ram space won't suffice.
@@ -147,3 +147,4 @@
 	- second, the compute nodes will need to have this machine set as their default gateway.  See seperate note 'centos networking'
 	- on the gateway, the external nic needs to be in the public zone, masquerading needs to be enabled on the pulic zone, and the internal nic needs to be assigned on the internal zone.
 	- `firewall-cmd` is used to get-zones, change-zones, and add-masqeurade
+	- note .. zone `external` may already have masquerading enabled
