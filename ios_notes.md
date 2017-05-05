@@ -17,3 +17,4 @@
 - `switchport access vlan 555` place port in vlan 555
 - `switchport trunk allowed vlan 1,2,3` place vlans on the trunk
 - `no spanning-tree vlan 1` disable stp
+- `default interface fa x/x` clear configuration of int fa x/x
