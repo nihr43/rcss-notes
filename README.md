@@ -21,7 +21,7 @@
 	- the directory needs the group id bit set; `chmod g+s /dir/`
 	- then the directory needs to be owned by a group; `chown .rcss /dir/`
 	- then the directory needs to be made rw for the group, owner, etc; `chmod 77x`
-
+	- `chmod +t` to set sticky bit, so only owners can delete and rename files
 
 
 ### Using a cluster
@@ -94,7 +94,7 @@
 	- `adduser user`
 	- `usermod -aG rcss user`
 3. Query the ldap server for a specific user.
-	- see serperate ldap notes
+	- see seperate ldap notes
 
 
 
