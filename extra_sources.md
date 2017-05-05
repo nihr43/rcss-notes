@@ -15,3 +15,5 @@
 - [Introduction to SElinux](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html)
 
 - city.csv from [sqlitetutorial.net](http://www.sqlitetutorial.net/sqlite-import-csv/)
+
+- [Julia By Example](https://juliabyexample.helpmanual.io/)
