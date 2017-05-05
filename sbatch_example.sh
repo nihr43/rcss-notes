@@ -2,7 +2,7 @@
 
 #example derived from docs.rnet.mirroui.edu
 
-#SBATCH -p TC  # use the Lewis partition
+#SBATCH -p TC  # use the TC partition
 #SBATCH -J hello_world  # give the job a custom name
 #SBATCH -o results-%j.out  # give the job output a custom name
 #SBATCH -t 0-00:01  # one minute time limit

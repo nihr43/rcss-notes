@@ -36,7 +36,7 @@
 	- interactive jobs using `srun` run in the foreground of a user's shell.  Therefore, sbatch is a better way of running large jobs.
 	- in order for sstat to work for batch jobs, they must use srun within the job file.
 4. When would using local scratch be optimal?
-	- Local scratch space would be much faster than an nfs mount, and therefore would be a good working directory for a job while running, when ram space won't suffice.
+	- Local scratch space will be much lower latency than an nfs mount, and therefore would be a good working directory for a job while running, when ram space won't suffice.
 5. Tell us some metrics about how the cluster is used.
 	- `sinfo` shows status of all collections of nodes
 	- `squeue` shows batch jobs in queue
@@ -64,8 +64,9 @@
 
 
 ### Scientific Computation
-1. Using scientific software (Julia and R) in interactive mode.
+1. Use scientific software (Julia and R) in interactive mode.
 2. Provide a simple test code and execute as a job on the cluster (Julia, R, Python, etc.)
+	- see sbatch_python.sh
 3. Demonstrate the use of parallelization.
 	- see factors.c
 4. Conduct a simple experimental analyses to demonstrate workflow management.
