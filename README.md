@@ -34,6 +34,7 @@
 	- argument `-o` can be used to show specific metrics
 3. Describe the difference between, and merits of, interactive and batch jobs.
 	- interactive jobs using `srun` run in the foreground of a user's shell.  Therefore, sbatch is a better way of running large jobs.
+	- batch jobs allow for an entire workflow to be executed over an extended period of time.  They also give you a better way of defining parameters such as node count, time limits, job name, output name
 	- in order for sstat to work for batch jobs, they must use srun within the job file.
 4. When would using local scratch be optimal?
 	- Local scratch space will be much lower latency than an nfs mount, and therefore would be a good working directory for a job while running, when ram space won't suffice.
@@ -76,6 +77,9 @@
 
 ### Data Management
 1. Create a simple SQLite3 database from a CSV file and perform a simple query. Use of C and scripting libraries acceptable but not direct examples.
+	- set mode to csv; `.mode csv`
+	- create table with schema of file
+	- import with `.import /file.csv table`
 2. What happens when you dump 10,000 files in a folder? How can you mitigate this problem.
 	- Depending on the filesystem, 10,000 files in a single directory may be too many.  Problems of this nature could be mitigated by piping into a tool like tar or gzip
 3. Utilize an external service that has a REST API (S3, iPlant etc.).
